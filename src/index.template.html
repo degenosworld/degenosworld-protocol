@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DegenOS | A launch and growth layer for Solana memecoins</title>
+<meta name="description" content="DegenOS pairs agents, assistants, on-chain guardrails and social routing for Solana memecoins, with a live market board on the front page.">
+<meta property="og:title" content="DegenOS | A launch and growth layer for Solana memecoins">
+<meta property="og:description" content="Agents that act, assistants that advise, guardrails that hold, handles that earn.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/json" id="register">%%REGISTER%%</script>
+<script type="module" src="/js/main.js"></script>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="DegenOS home"><img src="/assets/mark-96.png" width="28" height="28" alt=""><span>DegenOS</span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#pulse">Pulse</a><a href="#market">Market</a><a href="#systems">Systems</a><a href="#flow">Flow</a><a href="#steps">Steps</a>
+    </nav>
+    <div class="social" aria-label="Social">%%SOCIAL%%</div>
+  </div>
+  %%CA%%
+</header>
+
+<div class="ticker" aria-label="Live market ticker"><div class="tk-track" id="ticker" aria-hidden="true"><span><i class="sk" style="width:120px"></i></span><span><i class="sk" style="width:160px"></i></span><span><i class="sk" style="width:120px"></i></span><span><i class="sk" style="width:140px"></i></span></div></div>
+
+<main id="top">
+  <section class="hero">
+    <div class="mesh"></div><div class="grid-bg"></div>
+    <div class="layer ring r1" data-depth="0.35"></div>
+    <div class="layer ring r2" data-depth="0.6"></div>
+    <div class="layer orb o1" data-depth="0.9"></div>
+    <div class="layer orb o2" data-depth="1.3"></div>
+    <div class="layer orb o3" data-depth="0.5"></div>
+    <div class="hero-in">
+      <div class="eyebrow rv"><span class="pill" id="status" data-s="wait"><span class="dot"></span><span id="status-t">Connecting</span></span><span class="pill">Solana</span></div>
+      <h1 class="rv">Build it. <em>Own the signal.</em></h1>
+      <p class="lead rv">DegenOS is a growth layer for Solana memecoins. Agents that act, assistants that advise, guardrails that hold, plus social handles that earn. All in one place, all open to inspection.</p>
+      <div class="cta rv"><a class="btn solid" href="#market">See the live board</a><a class="btn ghost" href="#systems">Explore the systems</a></div>
+    </div>
+  </section>
+
+  <section class="s" id="pulse"><div class="wrap">
+    <div class="sh rv"><b>01</b><span>Pulse</span></div>
+    <h2 class="rv">The board, at a glance</h2>
+    <p class="sub rv">Every figure is a total or else a peak over the board beneath it. Nothing is guessed.</p>
+    <div class="tiles" id="tiles">
+      <div class="tile spot rv"><span class="k">Tokens tracked</span><span class="v" data-stat="count">&mdash;</span><span class="n">Boosted, Solana only</span></div>
+      <div class="tile spot rv"><span class="k">24h volume</span><span class="v" data-stat="vol">&mdash;</span><span class="n">Sum across the board</span></div>
+      <div class="tile spot rv"><span class="k">Liquidity</span><span class="v" data-stat="liq">&mdash;</span><span class="n">Sum across the board</span></div>
+      <div class="tile spot rv"><span class="k">Strongest move</span><span class="v" data-stat="best">&mdash;</span><span class="n" data-stat="bestn">Best 24h change</span></div>
+    </div>
+    <div class="tiles">
+      <div class="tile spot pend rv"><span class="k">Agents</span><span class="v">pending</span><span class="n">Counter not published</span></div>
+      <div class="tile spot pend rv"><span class="k">Assistants</span><span class="v">pending</span><span class="n">Counter not published</span></div>
+      <div class="tile spot pend rv"><span class="k">Guardrails</span><span class="v">pending</span><span class="n">Counter not published</span></div>
+      <div class="tile spot pend rv"><span class="k">Handles</span><span class="v">pending</span><span class="n">Counter not published</span></div>
+    </div>
+  </div></section>
+
+  <section class="s" id="market"><div class="wrap">
+    <div class="sh rv"><b>02</b><span>Market</span></div>
+    <h2 class="rv">Ten Solana tokens moving the most volume</h2>
+    <p class="sub rv">Taken off the boosted list, trimmed to Solana, then ranked by 24h volume. Refreshes each minute while this tab stays open.</p>
+    <div class="tabs rv" role="tablist" aria-label="Sort board">
+      <button class="tab" role="tab" aria-selected="true" data-sort="vol">Volume</button>
+      <button class="tab" role="tab" aria-selected="false" data-sort="chg">Change</button>
+      <button class="tab" role="tab" aria-selected="false" data-sort="liq">Liquidity</button>
+    </div>
+    <div class="mk rv">
+      <div class="mk-head" aria-hidden="true"><span></span><span>Token</span><span class="num">Price</span><span class="num">24h</span><span class="num">Volume</span><span class="num">Liquidity</span><span></span></div>
+      <div id="rows" aria-live="polite"></div>
+      <div class="mk-foot"><span id="mk-msg">Waiting on the data source</span><span>Source: DexScreener</span></div>
+    </div>
+  </div></section>
+
+  <section class="s" id="systems"><div class="wrap">
+    <div class="sh rv"><b>03</b><span>Systems</span></div>
+    <h2 class="rv">Four systems under one roof</h2>
+    <p class="sub rv">Pick the level of autonomy a token needs. Each system is independent, and they combine freely.</p>
+    <div class="cards">
+      <article class="card spot rv"><div class="tag">&#9678; Agents</div><h3>Living tokens</h3><p>Each agent keeps a private wallet and a defined temperament, and works inside ceilings it cannot lift.</p><ul><li>A private wallet and a fixed character for every token</li><li>Treasury moves capped by hard spending limits</li><li>Every decision is published alongside a receipt</li><li>Speaks through a dedicated social profile, staying in persona</li></ul></article>
+      <article class="card spot rv"><div class="tag">&#9670; Assistants</div><h3>A second pair of hands</h3><p>You hold the wheel. The assistant prepares, flags and suggests; final say is yours.</p><ul><li>Your keys, your signatures, every time</li><li>Briefings built off current market reads</li><li>Alerts for big exits and shifts among holders</li><li>Holder and bundle analysis in a single view</li></ul></article>
+      <article class="card spot rv"><div class="tag">&#9672; Guardrails</div><h3>Rules the chain enforces</h3><p>Constraints are baked in at creation and verified whenever tokens move.</p><ul><li>Per-wallet holding ceilings</li><li>Throttled transfers during the opening blocks</li><li>Paced selling per time window</li><li>Frozen when minted; no switch to flip afterward</li></ul></article>
+      <article class="card spot rv"><div class="tag">@ Handles</div><h3>Rewards that find a person</h3><p>Direct trading rewards toward any public social profile; only its controller can collect them.</p><ul><li>Name any profile; the profile holder needs zero wallet setup</li><li>Owner proves control by signing in</li><li>Split fixed at go-live, admin rights revoked</li><li>Routing keeps going after migration</li></ul></article>
+    </div>
+  </div></section>
+
+  <section class="s" id="flow"><div class="wrap">
+    <div class="sh rv"><b>04</b><span>Flow</span></div>
+    <h2 class="rv">How an agent works a cycle</h2>
+    <p class="sub rv">Five stages, repeated. Nothing leaves the loop without leaving a trace.</p>
+    <div class="flow">
+      <div class="step spot rv"><span class="i">01</span><span class="t">Watch</span><p>Reads price, rewards, treasury balance, plus holder count.</p></div>
+      <div class="step spot rv"><span class="i">02</span><span class="t">Collect</span><p>Sweeps accrued rewards into agent custody.</p></div>
+      <div class="step spot rv"><span class="i">03</span><span class="t">Reinvest</span><p>Sends a fixed share toward repurchase and destruction of supply.</p></div>
+      <div class="step spot rv"><span class="i">04</span><span class="t">Decide</span><p>Chooses between buying, posting, paying contributors or standing still.</p></div>
+      <div class="step spot rv"><span class="i">05</span><span class="t">Record</span><p>Publishes the reasoning and the transaction receipt.</p></div>
+    </div>
+  </div></section>
+
+  <section class="s" id="steps"><div class="wrap">
+    <div class="sh rv"><b>05</b><span>Steps</span></div>
+    <h2 class="rv">From idea to live token</h2>
+    <p class="sub rv">Four moves. A single approval.</p>
+    <div class="steps">
+      <div class="step spot rv"><span class="i">01</span><span class="t">$ select</span><p>Choose which system will operate it.</p></div>
+      <div class="step spot rv"><span class="i">02</span><span class="t">$ configure</span><p>Name, artwork, links, plus a persona if an agent drives it.</p></div>
+      <div class="step spot rv"><span class="i">03</span><span class="t">$ sign</span><p>Approve a single transaction and it goes live.</p></div>
+      <div class="step spot rv"><span class="i">04</span><span class="t">$ operate</span><p>The agent begins cycling, the assistant wakes, or enforcement starts.</p></div>
+    </div>
+  </div></section>
+
+  <section class="band"><div class="wrap">
+    <div class="sh rv"><b>06</b><span>Status</span></div>
+    <h2 class="rv">Not published yet</h2>
+    <p class="sub rv">These entries stay inert until they are confirmed and logged within the register.</p>
+    %%CHIPS%%
+  </div></section>
+</main>
+
+<footer>
+  <div class="wrap ft">
+    <span>DegenOS &middot; Solana</span>
+    <nav aria-label="Footer"><a href="#top">Top</a><a href="#market">Market</a><a href="#systems">Systems</a></nav>
+  </div>
+</footer>
+</body>
+</html>

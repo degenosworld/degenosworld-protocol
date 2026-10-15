@@ -1,0 +1,21 @@
+/* The only file allowed to hold colour literals.
+   Provenance: every value is a real pixel of the supplied assets.
+   - Mark greens: k-means (k=5) over non-black pixels of brand/LOGO DEGENOS PNG...png (RGBA, 2000x2000),
+     each centroid snapped to the nearest actual pixel. Most frequent non-black pixel: #39e138.
+       #39e038  #47ee44  #5af754  #6ffa68  #8cfa82
+   - Surface and text: k-means over reference/DEGENOS 1..6 slides (1600x900), snapped to real pixels.
+       dominant pixel #011806 (about 81 percent of frame), #103418 deep green, #49784e muted green,
+       #97c49b soft green, #f8fdf9 near white.
+   - Chart-green for sparklines: #0c391a snapped from reference/SAMPUL DEGENOS JPG. */
+:root {
+  --bg: #011806;
+  --line-deep: #103418;
+  --mute-deep: #49784e;
+  --mute: #97c49b;
+  --ink: #f8fdf9;
+  --accent: #39e038;
+  --accent-2: #47ee44;
+  --accent-3: #5af754;
+  --accent-hi: #8cfa82;
+  --panel-deep: #0c391a;
+}

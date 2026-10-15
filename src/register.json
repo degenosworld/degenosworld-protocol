@@ -1,0 +1,56 @@
+{
+  "records": {
+    "ca": {
+      "label": "Mint address",
+      "state": "absent",
+      "kind": "address",
+      "checked": "2026-10-15"
+    },
+    "x": {
+      "label": "X",
+      "state": "stated",
+      "kind": "link",
+      "checked": "2026-10-15",
+      "url": "https://x.com/degenosworld"
+    },
+    "github": {
+      "label": "GitHub",
+      "state": "stated",
+      "kind": "link",
+      "checked": "2026-10-15",
+      "url": "https://github.com/degenosworld/degenosworld-protocol"
+    },
+    "chain": {
+      "label": "Solana",
+      "state": "stated",
+      "kind": "chain",
+      "value": "solana",
+      "rpc": "https://solana-rpc.publicnode.com",
+      "source": "client statement",
+      "scope": "batch-level",
+      "checked": "2026-10-15"
+    },
+    "market": {
+      "label": "Market feed",
+      "state": "stated",
+      "kind": "feed",
+      "url": "https://api.dexscreener.com/token-boosts/top/v1",
+      "pairs": "https://api.dexscreener.com/tokens/v1/solana/",
+      "source": "client statement",
+      "scope": "batch-level",
+      "checked": "2026-10-15"
+    },
+    "launcher": {
+      "label": "Launcher",
+      "state": "absent",
+      "kind": "link",
+      "checked": "2026-10-15"
+    },
+    "docs": {
+      "label": "Docs",
+      "state": "absent",
+      "kind": "link",
+      "checked": "2026-10-15"
+    }
+  }
+}

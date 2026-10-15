@@ -1,0 +1,12 @@
+{
+  "name": "degenos",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "DegenOS static site",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "gates": "node gates/run.mjs"
+  },
+  "license": "MIT"
+}
